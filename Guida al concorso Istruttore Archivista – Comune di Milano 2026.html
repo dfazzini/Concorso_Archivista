@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Guida al concorso Istruttore Archivista – Comune di Milano 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EDF0EB; --surface:#F8FAF7; --ink:#1D2A2E; --muted:#56646A; --rule:#C3CCC5;
+  --accent:#2C5E5C; --accent-soft:#DCE7E3; --seal:#9C2F3D; --seal-soft:#F3E1E3; --on-accent:#F8FAF7;
+  --sans:"Archivo", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --serif:"Literata", Georgia, "Times New Roman", serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top, 0px);
+  padding-bottom:env(safe-area-inset-bottom, 0px);
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#141B1C; --surface:#1B2426; --ink:#E2E8E4; --muted:#9AA8A6; --rule:#324042;
+    --accent:#79B3AB; --accent-soft:#1F3533; --seal:#E48795; --seal-soft:#3A2327; --on-accent:#10181A;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#141B1C; --surface:#1B2426; --ink:#E2E8E4; --muted:#9AA8A6; --rule:#324042;
+  --accent:#79B3AB; --accent-soft:#1F3533; --seal:#E48795; --seal-soft:#3A2327; --on-accent:#10181A;
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:calc(env(safe-area-inset-top, 0px) + 64px); scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{margin:0; background:var(--paper); color:var(--ink); font-family:var(--serif); font-size:17px; line-height:1.62;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility}
+img{max-width:100%}
+a{color:var(--accent); text-decoration-thickness:1px; text-underline-offset:3px}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:3px solid var(--accent); outline-offset:2px; border-radius:3px}
+
+.wrap{max-width:760px; margin:0 auto; padding:0 22px}
+
+/* Hero: etichetta di faldone */
+header.hero{padding:44px 0 28px}
+.hero h1{font-family:var(--sans); font-weight:800; font-size:clamp(2rem, 5.4vw, 3.1rem); line-height:1.05;
+  letter-spacing:-0.02em; margin:0 0 14px; max-width:16ch}
+.hero .lede{font-size:1.08rem; color:var(--muted); margin:0 0 28px; max-width:60ch}
+.label{display:grid; grid-template-columns:14px 1fr; background:var(--surface); border:1px solid var(--rule);
+  border-radius:4px; overflow:hidden}
+.label .spine{background:var(--accent)}
+.label .body{padding:18px 22px 20px}
+.label dl{display:grid; grid-template-columns:max-content 1fr; gap:6px 18px; margin:0; font-family:var(--sans); font-size:.95rem}
+.label dt{color:var(--muted)}
+.label dd{margin:0; font-weight:500}
+.label .when{margin-top:16px; padding-top:14px; border-top:1px dashed var(--rule); display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 16px}
+.label .when strong{font-family:var(--sans); font-weight:800; font-size:clamp(1.5rem, 4vw, 2rem); letter-spacing:-0.01em; color:var(--seal)}
+.label .when span{font-family:var(--sans); color:var(--muted); font-size:.95rem}
+
+/* Nav */
+nav.toc{position:sticky; top:env(safe-area-inset-top, 0px); z-index:20; background:var(--paper);
+  border-bottom:1px solid var(--rule)}
+nav.toc ul{list-style:none; margin:0 auto; padding:0 22px; max-width:760px; display:flex; gap:4px; overflow-x:auto; scrollbar-width:none}
+nav.toc ul::-webkit-scrollbar{display:none}
+nav.toc a{display:block; padding:12px 10px; white-space:nowrap; font-family:var(--sans); font-size:.9rem; font-weight:500;
+  color:var(--muted); text-decoration:none; border-bottom:2px solid transparent}
+nav.toc a:hover{color:var(--ink)}
+nav.toc a.active{color:var(--ink); border-bottom-color:var(--accent)}
+
+main section{padding:40px 0 8px}
+h2{font-family:var(--sans); font-weight:700; font-size:1.65rem; line-height:1.2; letter-spacing:-0.01em; margin:0 0 12px}
+h3{font-family:var(--sans); font-weight:600; font-size:1.12rem; line-height:1.3; margin:28px 0 8px}
+p{margin:0 0 14px; max-width:68ch}
+ul.plain{margin:0 0 16px; padding-left:1.2em}
+ul.plain li{margin:0 0 8px; max-width:66ch}
+ul.plain li::marker{color:var(--accent)}
+.note{font-family:var(--sans); font-size:.92rem; color:var(--muted)}
+
+.facts{display:grid; grid-template-columns:max-content 1fr; gap:10px 22px; margin:18px 0 8px; padding:18px 0;
+  border-top:1px solid var(--rule); border-bottom:1px solid var(--rule)}
+.facts dt{font-family:var(--sans); font-weight:600; font-size:.95rem}
+.facts dd{margin:0}
+@media (max-width:560px){.facts,.label dl{grid-template-columns:1fr} .facts dt{margin-top:6px} .label dd{margin-bottom:6px}}
+
+/* Checklist */
+.checklist{list-style:none; padding:0; margin:0 0 12px}
+.checklist li{border-bottom:1px solid var(--rule)}
+.checklist label{display:grid; grid-template-columns:22px 1fr; gap:12px; padding:10px 2px; cursor:pointer; align-items:start}
+.checklist input{width:18px; height:18px; margin:4px 0 0; accent-color:var(--accent)}
+.checklist input:checked + span{color:var(--muted); text-decoration:line-through; text-decoration-color:var(--rule)}
+.progress-line{font-family:var(--sans); font-size:.9rem; color:var(--muted); margin:6px 0 0}
+
+/* Priority blocks */
+.tier{border-left:4px solid var(--accent); padding:4px 0 4px 18px; margin:22px 0}
+.tier.t2{border-left-color:color-mix(in srgb, var(--accent) 55%, var(--rule))}
+.tier.t3{border-left-color:var(--rule)}
+.tier h3{margin-top:0}
+.tier dl{margin:0}
+.tier dt{font-family:var(--sans); font-weight:600; font-size:.98rem; margin-top:12px}
+.tier dd{margin:2px 0 0}
+
+/* Tables */
+.table-scroll{overflow-x:auto; margin:14px 0 18px; border:1px solid var(--rule); border-radius:4px; background:var(--surface)}
+table{border-collapse:collapse; width:100%; font-family:var(--sans); font-size:.93rem; line-height:1.45}
+th,td{text-align:left; vertical-align:top; padding:10px 14px; border-bottom:1px solid var(--rule)}
+tr:last-child td{border-bottom:0}
+th{font-weight:600; background:var(--accent-soft)}
+td:first-child{font-weight:600; white-space:nowrap}
+
+/* Link list */
+.links{list-style:none; padding:0; margin:0}
+.links li{padding:14px 0; border-bottom:1px solid var(--rule)}
+.links li:first-child{border-top:1px solid var(--rule)}
+.links a{font-family:var(--sans); font-weight:600}
+.links p{margin:4px 0 0; font-size:.98rem}
+
+/* Quiz */
+.quiz-controls{display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin:18px 0 10px}
+.seg{display:inline-flex; border:1px solid var(--rule); border-radius:4px; overflow:hidden; background:var(--surface)}
+.seg button{font-family:var(--sans); font-size:.95rem; font-weight:500; border:0; background:transparent; color:var(--ink);
+  padding:9px 14px; cursor:pointer}
+.seg button + button{border-left:1px solid var(--rule)}
+.seg button[aria-pressed="true"]{background:var(--accent); color:var(--on-accent)}
+.btn{font-family:var(--sans); font-size:.95rem; font-weight:600; border-radius:4px; padding:10px 16px; cursor:pointer;
+  border:1px solid var(--accent); background:var(--accent); color:var(--on-accent)}
+.btn.ghost{background:transparent; color:var(--accent)}
+.btn:disabled{opacity:.5; cursor:not-allowed}
+.start-panel{background:var(--surface); border:1px solid var(--rule); border-radius:4px; padding:18px 20px; margin:10px 0 20px}
+.start-panel p{margin-bottom:12px}
+
+fieldset.q{border:0; margin:0; padding:18px 0 14px; min-width:0; background:linear-gradient(var(--rule), var(--rule)) top left / 100% 1px no-repeat}
+fieldset.q legend{float:left; width:100%; font-family:var(--sans); font-weight:600; font-size:1.02rem; line-height:1.4; padding:0; margin-bottom:10px; display:grid; grid-template-columns:2.2em 1fr}
+fieldset.q legend + *{clear:both}
+fieldset.q legend .n{color:var(--muted); font-weight:500}
+.opt{display:grid; grid-template-columns:22px 1.4em 1fr; gap:6px; align-items:start; padding:7px 8px; margin:2px 0 2px 2.2em;
+  border-radius:4px; cursor:pointer; border:1px solid transparent}
+.opt:hover{background:var(--accent-soft)}
+form:not(.done) .opt:has(input:checked){background:var(--accent-soft); border-color:var(--rule)}
+.opt input{margin:5px 0 0; width:16px; height:16px; accent-color:var(--accent)}
+.opt .l{font-family:var(--sans); font-weight:600}
+.opt.correct{background:var(--accent-soft); border-color:var(--accent)}
+.opt.wrong{background:var(--seal-soft); border-color:var(--seal)}
+.done .opt{cursor:default}
+.done .opt:hover{background:transparent}
+.done .opt.correct:hover{background:var(--accent-soft)}
+.done .opt.wrong:hover{background:var(--seal-soft)}
+.expl{margin:8px 0 0 2.2em; padding:10px 14px; border-radius:4px; background:var(--surface); border:1px solid var(--rule); font-size:.97rem}
+.expl b{font-family:var(--sans)}
+.verdict-ok{color:var(--accent)} .verdict-ko{color:var(--seal)}
+
+.result{border:1px solid var(--rule); border-left:14px solid var(--accent); background:var(--surface); border-radius:4px; padding:16px 20px; margin:6px 0 18px}
+.result.fail{border-left-color:var(--seal)}
+.result .score{font-family:var(--sans); font-weight:800; font-size:2rem; line-height:1.1}
+.result p{margin:6px 0 0}
+
+.testbar{position:sticky; bottom:0; z-index:15; background:var(--paper); border-top:1px solid var(--rule);
+  padding:10px 0 calc(10px + env(safe-area-inset-bottom, 0px)); margin-top:10px}
+.testbar .in{display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap}
+.timer{font-family:var(--sans); font-weight:700; font-size:1.35rem; font-variant-numeric:tabular-nums}
+.timer.low{color:var(--seal)}
+.count{font-family:var(--sans); color:var(--muted); font-size:.92rem}
+[hidden]{display:none !important}
+
+footer{margin-top:48px; padding:26px 0 40px; border-top:1px solid var(--rule); font-family:var(--sans); font-size:.9rem; color:var(--muted)}
+footer p{max-width:70ch}
+
+@media print{
+  nav.toc, .quiz-controls, .start-panel, .testbar{display:none !important}
+  body{background:#fff}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>Guida al concorso per Istruttore Archivista</h1>
+    <p class="lede">Tutto quello che serve per preparare la selezione del Comune di Milano: regole della prova, programma, materiali, un piano di studio e tre simulazioni da 30 domande da svolgere a tempo.</p>
+    <div class="label" role="group" aria-label="Estremi della selezione">
+      <div class="spine" aria-hidden="true"></div>
+      <div class="body">
+        <dl>
+          <dt>Ente</dt><dd>Comune di Milano</dd>
+          <dt>Selezione</dt><dd>IST ARCHIVISTA C. 2026</dd>
+          <dt>Profilo</dt><dd>Istruttore dei Servizi Tecnici, Area degli Istruttori, ambito Archivista</dd>
+          <dt>Posti</dt><dd>3, a tempo pieno e indeterminato</dd>
+          <dt>Sede di lavoro</dt><dd>Cittadella degli Archivi e altre strutture comunali per archivi e gestione documentale</dd>
+        </dl>
+        <div class="when">
+          <strong>29 settembre 2026, ore 12:00</strong>
+          <span id="countdown">Prova scritta digitale da remoto</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="toc" aria-label="Sezioni">
+  <ul>
+    <li><a href="#prova">La prova</a></li>
+    <li><a href="#programma">Cosa studiare</a></li>
+    <li><a href="#memoria">Da memorizzare</a></li>
+    <li><a href="#materiale">Materiale</a></li>
+    <li><a href="#esercitarsi">Dove esercitarsi</a></li>
+    <li><a href="#piano">Piano di studio</a></li>
+    <li><a href="#simulazioni">Simulazioni</a></li>
+  </ul>
+</nav>
+
+<main class="wrap">
+
+<section id="prova">
+  <h2>La prova scritta</h2>
+  <p>La prova si svolge online, dal proprio computer, sotto il controllo di una commissione collegata tramite smartphone. È gestita dalla società Merito S.r.l. per conto del Comune.</p>
+  <dl class="facts">
+    <dt>Quando</dt><dd>29 settembre 2026, ore 12:00. Controlla il calendario ufficiale per l'orario di convocazione.</dd>
+    <dt>Formato</dt><dd>30 quesiti a risposta multipla, con una sola risposta esatta.</dd>
+    <dt>Tempo</dt><dd>40 minuti, più 12 minuti per chi ha diritto a tempi aggiuntivi.</dd>
+    <dt>Punteggio</dt><dd>+1 per ogni risposta corretta, 0 per risposte errate o omesse. Non ci sono penalità, quindi conviene rispondere sempre.</dd>
+    <dt>Soglia</dt><dd>Almeno 21/30 per essere ammessi all'orale.</dd>
+    <dt>Esiti</dt><dd>Dal 30 settembre 2026 sul sito del Comune (Amministrazione Trasparente, Bandi di concorso, stato "Chiuso") e sul portale inPA.</dd>
+  </dl>
+
+  <h3>Prima della prova</h3>
+  <p class="note">Puoi spuntare le voci man mano: la lista si ricorda su questo dispositivo.</p>
+  <ul class="checklist" id="checklist">
+    <li><label><input type="checkbox" data-k="c1"><span>Fai la sessione di training obbligatoria su <a href="https://comunemilano.selezionidigitali.it" target="_blank" rel="noopener">comunemilano.selezionidigitali.it</a> entro il 28 settembre, sia da PC (solo Google Chrome) sia da smartphone, inserendo il codice fiscale.</span></label></li>
+    <li><label><input type="checkbox" data-k="c2"><span>PC con Windows 10 o successivo oppure macOS 11 o successivo, almeno 4 GB di RAM, Chrome installato, schermo da almeno 1366×768 e mouse o trackpad. Non sono ammessi tablet o PC solo touch; meglio evitare i PC aziendali.</span></label></li>
+    <li><label><input type="checkbox" data-k="c3"><span>Sul PC disattiva antivirus, firewall e VPN e sospendi gli aggiornamenti automatici.</span></label></li>
+    <li><label><input type="checkbox" data-k="c4"><span>Smartphone con iOS 15.1 o Android 8.0 o successivi, con Chrome, Jitsi Meet, Google Meet e WhatsApp installati, fotocamera e microfono autorizzati.</span></label></li>
+    <li><label><input type="checkbox" data-k="c5"><span>PC e smartphone collegati alla stessa rete Wi-Fi, con almeno 1 Mbps in upload e 1,5 Mbps in download, e nessun altro dispositivo sulla stessa connessione.</span></label></li>
+    <li><label><input type="checkbox" data-k="c6"><span>Entrambi i dispositivi carichi al 100%, collegati alla corrente e impostati per non andare in sospensione.</span></label></li>
+    <li><label><input type="checkbox" data-k="c7"><span>Stanza silenziosa e illuminata, con un'unica porta (o con tutte le porte inquadrabili) e nessun'altra persona presente per tutta la prova.</span></label></li>
+    <li><label><input type="checkbox" data-k="c8"><span>Smartphone su un supporto alle tue spalle, a circa un metro e a 45°, in modo da inquadrare te, la scrivania e la porta.</span></label></li>
+    <li><label><input type="checkbox" data-k="c9"><span>Documento d'identità con fotografia a portata di mano.</span></label></li>
+    <li><label><input type="checkbox" data-k="c10"><span>Nessun libro, appunto o foglio bianco sulla scrivania, e nessuna cuffia, auricolare, smartwatch o calcolatrice nella stanza.</span></label></li>
+  </ul>
+  <p class="progress-line" id="checkProgress"></p>
+
+  <h3>Durante la prova</h3>
+  <ul class="plain">
+    <li>Dopo l'identificazione compare un conto alla rovescia: entro quel tempo devi scollegare il PC da internet. La prova si svolge offline.</li>
+    <li>Puoi cambiare o togliere una risposta e tornare su qualsiasi domanda fino allo scadere del tempo. Hai circa 80 secondi per domanda.</li>
+    <li>Alla fine clicca "TERMINA PROVA", ricollega il PC a internet e resta in videochiamata finché non compare il messaggio "PROVA CONSEGNATA". Se esci prima, la prova non viene acquisita.</li>
+    <li>Se lo smartphone si disconnette, il personale ti richiama su WhatsApp: rispondi, perché dopo due tentativi a vuoto la commissione può escluderti.</li>
+    <li>Per problemi tecnici scrivi subito a <a href="mailto:assistenza@comunemilano.selezionidigitali.it">assistenza@comunemilano.selezionidigitali.it</a> indicando nome e cognome, data e luogo di nascita, codice fiscale, telefono e il problema riscontrato.</li>
+  </ul>
+
+  <h3>Dopo lo scritto</h3>
+  <p>La prova orale è un colloquio in presenza. La data viene comunicata con almeno 15 giorni di anticipo sul sito del Comune e su inPA. Anche l'orale si supera con almeno 21/30, e il punteggio finale è la somma di scritto e orale.</p>
+</section>
+
+<section id="programma">
+  <h2>Cosa studiare</h2>
+  <p>Le materie sono quelle del paragrafo 9 del bando. Qui sono ordinate per priorità, cioè per quanto è probabile che pesino nei 30 quesiti.</p>
+
+  <div class="tier">
+    <h3>Priorità 1: il cuore della prova</h3>
+    <dl>
+      <dt>Archivistica generale</dt>
+      <dd>Nozione di archivio e vincolo archivistico, ciclo di vita (corrente, deposito, storico), soggetto produttore e conservatore, fondo, serie, fascicolo, unità documentaria. Metodo storico e principio di provenienza. Strumenti di corredo: inventario, elenco di consistenza e di versamento, guida, repertorio, indici.</dd>
+      <dt>Gestione documentale</dt>
+      <dd>Protocollo (elementi obbligatori, annullamento, segnatura), AOO, titolario, fascicolazione (per affare, attività, persona, procedimento), repertorio dei fascicoli, piano di conservazione e scarto, versamenti. Per un Comune è centrale il Piano di classificazione per gli archivi dei Comuni del 2005 con il relativo piano di conservazione.</dd>
+      <dt>Codice dei beni culturali (D.Lgs. 42/2004)</dt>
+      <dd>Art. 10 (archivi pubblici come beni culturali), art. 13 (dichiarazione per gli archivi privati), artt. 18–21 (vigilanza e autorizzazioni, compreso lo scarto), art. 30 (obblighi di conservazione e inventariazione), art. 41 (versamenti agli Archivi di Stato), artt. 122–127 (consultabilità).</dd>
+      <dt>D.P.R. 445/2000</dt>
+      <dd>Soprattutto artt. 50–69 sulla gestione informatica dei documenti e artt. 46–47 sulle dichiarazioni sostitutive.</dd>
+      <dt>CAD e Linee guida AgID</dt>
+      <dd>Documento informatico, firme, copie e duplicati; manuale di gestione e di conservazione, responsabili, pacchetti SIP/AIP/DIP secondo il modello OAIS, metadati e formati.</dd>
+      <dt>Standard di descrizione</dt>
+      <dd>ISAD(G), ISAAR(CPF), ISDF, ISDIAH, RiC, EAD/EAC-CPF, NIERA. Sistemi informativi: SAN, SIUSA, SIAS.</dd>
+    </dl>
+  </div>
+
+  <div class="tier t2">
+    <h3>Priorità 2: diritto</h3>
+    <dl>
+      <dt>Procedimento e accesso</dt>
+      <dd>L. 241/1990 (procedimento e accesso agli atti) e D.Lgs. 33/2013 (trasparenza, accesso civico semplice e generalizzato).</dd>
+      <dt>Privacy</dt>
+      <dd>GDPR, in particolare l'art. 89, e D.Lgs. 196/2003, più le Regole deontologiche per il trattamento a fini di archiviazione nel pubblico interesse o di ricerca storica.</dd>
+      <dt>Enti locali e pubblico impiego</dt>
+      <dd>TUEL (organi del Comune, dirigenti), D.Lgs. 165/2001, codice di comportamento (D.P.R. 62/2013).</dd>
+      <dt>Sicurezza sul lavoro</dt>
+      <dd>D.Lgs. 81/2008: figure della sicurezza, DVR, movimentazione manuale dei carichi (Titolo VI), videoterminali, antincendio negli archivi.</dd>
+    </dl>
+  </div>
+
+  <div class="tier t3">
+    <h3>Priorità 3: tecnica e lingue</h3>
+    <dl>
+      <dt>Digitalizzazione</dt>
+      <dd>File master e derivati, formati (TIFF, JPEG, PDF/A), OCR, metadati (MAG, METS, Dublin Core), controllo qualità.</dd>
+      <dt>Conservazione preventiva</dt>
+      <dd>Microclima, luce, infestanti e muffe, condizionamento con materiali a pH neutro.</dd>
+      <dt>Informatica di base</dt>
+      <dd>Firma digitale (CAdES, PAdES), PEC, impronta hash, backup.</dd>
+      <dt>Inglese archivistico</dt>
+      <dd>Termini come fonds, series, file, finding aid, appraisal, retention schedule, provenance, original order.</dd>
+    </dl>
+  </div>
+</section>
+
+<section id="memoria">
+  <h2>Da memorizzare</h2>
+  <p>Numeri e nomi che nei quiz ricorrono spesso e che è facile confondere tra loro.</p>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th scope="col">Dato</th><th scope="col">A cosa si riferisce</th></tr></thead>
+      <tbody>
+        <tr><td>40 anni</td><td>Archivio storico degli enti pubblici: documenti relativi ad affari esauriti da oltre 40 anni (art. 30 D.Lgs. 42/2004)</td></tr>
+        <tr><td>30 anni</td><td>Versamenti degli uffici statali agli Archivi di Stato (art. 41 D.Lgs. 42/2004)</td></tr>
+        <tr><td>50 / 40 / 70 anni</td><td>Consultabilità (art. 122): 50 per i documenti riservati di politica estera o interna, 40 per dati sensibili e giudiziari, 70 per salute, vita sessuale e rapporti riservati di tipo familiare</td></tr>
+        <tr><td>Almeno 1 volta l'anno</td><td>Trasferimento dei fascicoli conclusi nell'archivio di deposito (art. 67 D.P.R. 445/2000)</td></tr>
+        <tr><td>30 giorni</td><td>Risposta all'accesso documentale (silenzio-rigetto) e all'accesso civico; termine generale del procedimento (art. 2 L. 241/1990)</td></tr>
+        <tr><td>14 titoli</td><td>Piano di classificazione per gli archivi dei Comuni del 2005, contro le 15 categorie della Circolare Astengo del 1897</td></tr>
+        <tr><td>26 / 7 / 4</td><td>ISAD(G): 26 elementi, 7 aree, 4 regole della descrizione multilivello</td></tr>
+        <tr><td>7 cifre</td><td>Numero di protocollo progressivo, rinnovato ogni anno solare (art. 57 D.P.R. 445/2000)</td></tr>
+        <tr><td>SIP / AIP / DIP</td><td>Pacchetti di versamento, archiviazione e distribuzione nel modello OAIS (ISO 14721)</td></tr>
+        <tr><td>Bonaini</td><td>Metodo storico di ordinamento</td></tr>
+        <tr><td>1841</td><td>Circolare francese sul rispetto dei fondi</td></tr>
+        <tr><td>1898</td><td>Manuale olandese di Muller, Feith e Fruin</td></tr>
+        <tr><td>Casanova, Cencetti</td><td>"Archivistica" (1928) e teoria del vincolo archivistico</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="materiale">
+  <h2>Dove trovare il materiale</h2>
+  <p>Il Comune non suggerisce testi e rimanda solo alle materie del bando. Non esiste una banca dati ufficiale: diffida dei siti che vendono "domande ufficiali" di questa selezione.</p>
+  <h3>Fonti gratuite</h3>
+  <ul class="plain">
+    <li><a href="https://www.normattiva.it" target="_blank" rel="noopener">Normattiva</a> per i testi vigenti di leggi e decreti.</li>
+    <li><a href="https://www.agid.gov.it" target="_blank" rel="noopener">AgID</a> per le Linee guida sulla formazione, gestione e conservazione dei documenti informatici, con gli allegati su formati e metadati.</li>
+    <li>Direzione Generale Archivi del Ministero della Cultura per il titolario e il piano di conservazione dei Comuni.</li>
+    <li><a href="https://www.ica.org" target="_blank" rel="noopener">ICA</a> e Direzione Generale Archivi per le traduzioni italiane degli standard di descrizione.</li>
+    <li><a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">Garante privacy</a> per le Regole deontologiche sugli archivi.</li>
+    <li>Istituto centrale per la digitalizzazione del patrimonio culturale (ICDP) per le linee guida sulla digitalizzazione.</li>
+  </ul>
+  <h3>Manuali per l'orale</h3>
+  <ul class="plain">
+    <li>Paola Carucci e Maria Guercio, <i>Manuale di archivistica</i> (Carocci).</li>
+    <li>Linda Giuva e Maria Guercio (a cura di), <i>Archivistica. Teorie, metodi, pratiche</i> (Carocci).</li>
+    <li>Maria Guercio, <i>Archivistica informatica</i> (Carocci).</li>
+  </ul>
+</section>
+
+<section id="esercitarsi">
+  <h2>Dove esercitarsi</h2>
+  <ul class="links">
+    <li><a href="https://www.comune.trento.it/Amministrazione/Documenti-e-dati/Documenti-albo-pretorio/Concorso-pubblico-per-n.-2-posti-di-funzionario-archivista-categoria-D-base" target="_blank" rel="noopener">Comune di Trento, funzionario archivista (2025–26)</a>
+      <p>Tracce della prova scritta per l'archivio corrente e di deposito e per l'archivio storico, più le domande dell'orale. Il livello è più alto, ma i contenuti sono ottimi.</p></li>
+    <li><a href="https://www.fiscoetasse.com/files/21199/simulazione-archivisti.pdf" target="_blank" rel="noopener">Ministero della Cultura, 577 funzionari (codice 03 archivista)</a>
+      <p>Simulazione gratuita in PDF diffusa da Maggioli: 40 domande in 60 minuti.</p></li>
+    <li><a href="https://www.inpa.gov.it/bandi-e-avvisi/dettaglio-bando-avviso/?concorso_id=061720aad38f4d9bb80eba0c771be410" target="_blank" rel="noopener">Ministero della Cultura, concorso 518 funzionari (2023)</a>
+      <p>Su inPA c'è il file delle prove orali del profilo funzionario archivista.</p></li>
+    <li><a href="https://www.concorsipubblici.com/node/80095" target="_blank" rel="noopener">Comune di Moncalieri, istruttore archivista</a>
+      <p>Stesso livello (Area degli Istruttori). Controlla nella sua Amministrazione Trasparente se ha pubblicato le tracce.</p></li>
+    <li><a href="https://quiz.concorsipubblici.com/test-190317/istruttore-direttivo-culturale-bibliotecario-archivista.htm" target="_blank" rel="noopener">Comune di Schio, bibliotecario archivista</a>
+      <p>Un piccolo set di quiz con domande su privacy, D.Lgs. 42/2004 e ISAAR(CPF).</p></li>
+  </ul>
+  <h3>Un metodo per trovarne altri</h3>
+  <p>L'art. 19 del D.Lgs. 33/2013 obbliga gli enti a pubblicare le tracce delle prove. Cerca "archivista" nella sezione Amministrazione Trasparente, Bandi di concorso, di Comuni, Regioni e Università, e tra i bandi chiusi su <a href="https://www.inpa.gov.it" target="_blank" rel="noopener">inPA</a>, dove spesso compaiono allegati come "busta_1_domande.pdf".</p>
+</section>
+
+<section id="piano">
+  <h2>Piano di studio</h2>
+  <p>Pensato per gli ultimi quattro giorni prima della prova.</p>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th scope="col">Giorno</th><th scope="col">Cosa fare</th></tr></thead>
+      <tbody>
+        <tr><td>Ven 25 settembre</td><td>Training sulla piattaforma e prova della postazione; ripasso di archivistica generale</td></tr>
+        <tr><td>Sab 26 settembre</td><td>Gestione documentale, titolario dei Comuni, D.Lgs. 42/2004, D.P.R. 445/2000; Simulazione 1</td></tr>
+        <tr><td>Dom 27 settembre</td><td>CAD e Linee guida AgID, standard di descrizione, digitalizzazione e conservazione; Simulazione 2</td></tr>
+        <tr><td>Lun 28 settembre</td><td>Diritto lampo (L. 241, D.Lgs. 33, GDPR, TUEL, D.Lgs. 165, D.Lgs. 81); Simulazione 3; ultimo giorno utile per il training</td></tr>
+        <tr><td>Mar 29 settembre</td><td>Ripasso leggero della tabella "Da memorizzare"; postazione pronta con largo anticipo e documento d'identità a portata di mano</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Dopo ogni simulazione annota le materie in cui hai sbagliato e ripassa quelle, non le singole domande.</p>
+</section>
+
+<section id="simulazioni">
+  <h2>Simulazioni</h2>
+  <p>Tre prove da 30 domande con le stesse regole dello scritto: 40 minuti, +1 per ogni risposta corretta, nessuna penalità, soglia 21/30. Le domande non sono ufficiali: sono costruite sul programma del bando. Le risposte corrette e le spiegazioni compaiono solo dopo la consegna.</p>
+
+  <div class="quiz-controls">
+    <div class="seg" role="group" aria-label="Scegli la simulazione">
+      <button type="button" data-sim="0" aria-pressed="true">Simulazione 1</button>
+      <button type="button" data-sim="1" aria-pressed="false">Simulazione 2</button>
+      <button type="button" data-sim="2" aria-pressed="false">Simulazione 3</button>
+    </div>
+  </div>
+
+  <div class="start-panel" id="startPanel">
+    <p id="startText">La Simulazione 1 è pronta. Il timer parte quando avvii la prova e alla scadenza la prova viene consegnata automaticamente.</p>
+    <button class="btn" type="button" id="startBtn">Avvia la prova</button>
+  </div>
+
+  <div id="result" hidden></div>
+  <form id="quizForm" hidden onsubmit="return false"></form>
+
+  <div class="testbar" id="testbar" hidden>
+    <div class="in">
+      <span class="timer" id="timer" aria-live="off">40:00</span>
+      <span class="count" id="count">0 di 30 risposte</span>
+      <button class="btn" type="button" id="submitBtn">Consegna la prova</button>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Guida preparata a settembre 2026 sulla base del bando e degli allegati pubblicati dal Comune di Milano. Per date, orari e comunicazioni fa fede solo la <a href="https://servizi.comune.milano.it/-/asset_publisher/pqxq/content/ist-archivista-c2026" target="_blank" rel="noopener">pagina ufficiale della selezione</a>, insieme al <a href="https://servizi.comune.milano.it/documents/20121/374887052/IST_C2026_BANDO_timbrato.pdf/b076a760-e878-63f7-9891-922ea6f5f808" target="_blank" rel="noopener">bando</a> e alla <a href="https://www.inpa.gov.it/bandi-e-avvisi/dettaglio-bando-avviso/?concorso_id=f94a6600c4ff449fb37b13a5f39a3b7d" target="_blank" rel="noopener">scheda su inPA</a>.</p>
+    <p>Le simulazioni sono materiale di esercitazione e non riproducono quesiti ufficiali.</p>
+  </div>
+</footer>
+
+<script>
+const SIMS = [[["Il \"vincolo archivistico\" è:", ["Il nesso logico e necessario che lega tra loro i documenti di un archivio, originato dall'attività del soggetto produttore", "L'obbligo di conservare i documenti per almeno 40 anni", "Il provvedimento con cui la Soprintendenza dichiara l'interesse culturale di un archivio privato", "Il legame fisico dei documenti all'interno dello stesso faldone"], "A", "Il vincolo archivistico (teorizzato in particolare da Cencetti) è il legame originario e necessario che unisce i documenti di un archivio, perché nascono dalla stessa attività del produttore."], ["Il cosiddetto \"metodo storico\" di ordinamento degli archivi è tradizionalmente associato a:", ["Natalis de Wailly", "Theodore Schellenberg", "Francesco Bonaini", "Eugenio Casanova"], "C", "Francesco Bonaini, nella Toscana dell'Ottocento, affermò che l'ordinamento deve rispecchiare la storia delle istituzioni che hanno prodotto le carte."], ["L'archivio corrente è costituito:", ["Dai documenti relativi ad affari esauriti da oltre 40 anni", "Dai documenti relativi ad affari in corso di trattazione", "Dai documenti selezionati per la conservazione permanente e già inventariati", "Dai documenti destinati allo scarto"], "B", "L'archivio corrente comprende i documenti degli affari e procedimenti ancora in corso; seguono le fasi di deposito e storica."], ["Il principio del \"rispetto dei fondi\" (respect des fonds) fu formulato ufficialmente:", ["In Olanda, con il manuale di Muller, Feith e Fruin del 1898", "In Italia, con la Circolare Astengo del 1897", "Dal Consiglio internazionale degli archivi con ISAD(G)", "In Francia, con una circolare del 1841"], "D", "Il principio fu enunciato in Francia con la circolare del 1841, legata al nome di Natalis de Wailly: i documenti di uno stesso produttore non vanno mescolati con quelli di altri."], ["L'inventario è:", ["Lo strumento di corredo che descrive analiticamente le unità di un fondo ordinato, dando conto della sua struttura e del contesto di produzione", "L'elenco sommario redatto al momento del versamento", "Il registro dei documenti in entrata e in uscita", "Il piano di classificazione dell'ente"], "A", "L'inventario è lo strumento di ricerca analitico per eccellenza; l'elenco di versamento è sommario, il protocollo è un registro, il titolario è un sistema di classificazione."], ["Per il condizionamento conservativo dei documenti cartacei è consigliato l'uso di:", ["Buste in PVC sigillate ermeticamente", "Contenitori in cartone riciclato acido", "Contenitori in cartone a pH neutro o leggermente alcalino", "Nastro adesivo per consolidare gli strappi"], "C", "I materiali acidi, il PVC e gli adesivi comuni degradano la carta; si usano materiali di qualità conservativa a pH neutro o con riserva alcalina."], ["ISAD(G) è lo standard internazionale per:", ["I record d'autorità di enti, persone e famiglie", "La descrizione archivistica generale", "La descrizione delle funzioni", "La descrizione degli istituti di conservazione"], "B", "ISAD(G) (General International Standard Archival Description) dell'ICA; per i record d'autorità c'è ISAAR(CPF), per le funzioni ISDF, per gli istituti ISDIAH."], ["ISAD(G), seconda edizione, articola la descrizione in:", ["12 elementi raggruppati in 3 aree", "40 elementi raggruppati in 10 aree", "26 elementi raggruppati in 7 aree", "15 elementi raggruppati in 5 aree"], "C", "Le 7 aree sono: identificazione, contesto, contenuto e struttura, condizioni di accesso e utilizzazione, documentazione collegata, note, controllo della descrizione."], ["Secondo le regole della descrizione multilivello di ISAD(G), si deve:", ["Ripetere a ogni livello tutte le informazioni del livello superiore", "Descrivere esclusivamente il livello dell'unità documentaria", "Partire sempre dalla descrizione del singolo documento", "Procedere dal generale al particolare"], "D", "Le 4 regole sono: dal generale al particolare, informazioni pertinenti al livello, collegamento delle descrizioni, non ripetizione delle informazioni."], ["Quale dei seguenti è un elemento obbligatorio della registrazione di protocollo ai sensi dell'art. 53 del D.P.R. 445/2000?", ["Il numero di pagine del documento", "L'oggetto del documento", "Il nominativo del responsabile del procedimento", "L'indicazione del fascicolo di appartenenza"], "B", "Gli elementi obbligatori sono: numero, data di registrazione, mittente o destinatario, oggetto, data e protocollo del documento ricevuto (se disponibili), impronta del documento informatico."], ["In caso di annullamento di una registrazione di protocollo:", ["Le informazioni annullate restano memorizzate e visibili, con data, autore e motivo dell'annullamento", "La registrazione viene cancellata dalla base dati", "Il numero di protocollo viene riassegnato al documento successivo", "È sufficiente correggere manualmente la registrazione"], "A", "L'art. 54 del D.P.R. 445/2000 garantisce la tracciabilità: l'informazione annullata resta leggibile insieme agli estremi dell'annullamento."], ["Il titolario (piano di classificazione) è:", ["L'elenco dei documenti da scartare", "Il registro giornaliero di protocollo", "L'elenco dei fascicoli aperti nell'anno", "Un sistema precostituito di partizioni gerarchiche, definito sulla base delle funzioni dell'ente, con cui si organizzano i documenti"], "D", "Il titolario classifica per funzioni e non per uffici; l'elenco dei fascicoli è il repertorio, quello dello scarto è il piano di conservazione o massimario."], ["Ai sensi dell'art. 67 del D.P.R. 445/2000, i fascicoli relativi a procedimenti conclusi sono trasferiti nell'archivio di deposito:", ["Ogni cinque anni", "Almeno una volta l'anno", "Dopo quarant'anni", "Ogni mese"], "B", "Il responsabile del servizio provvede almeno una volta all'anno al trasferimento, insieme ai relativi strumenti che ne garantiscono l'accesso."], ["Gli archivi e i singoli documenti di un Comune sono beni culturali:", ["Per legge (art. 10, c. 2 del D.Lgs. 42/2004), senza necessità di dichiarazione", "Solo dopo apposita dichiarazione della Soprintendenza", "Solo se risalgono a oltre 70 anni prima", "Solo se sono stati inventariati"], "A", "Gli archivi di Stato, regioni, enti pubblici territoriali e altri enti pubblici sono beni culturali ope legis; la dichiarazione (art. 13) serve per quelli privati."], ["Lo scarto di documenti degli archivi pubblici è subordinato:", ["Alla sola decisione del dirigente del servizio", "All'autorizzazione del Prefetto", "All'autorizzazione del Ministero della cultura, rilasciata tramite la Soprintendenza archivistica", "Al parere del Garante per la protezione dei dati personali"], "C", "Art. 21, c. 1, lett. d) del D.Lgs. 42/2004: lo scarto richiede l'autorizzazione ministeriale, esercitata per i Comuni dalla Soprintendenza archivistica competente."], ["Ai sensi dell'art. 30 del D.Lgs. 42/2004, gli enti pubblici devono istituire in sezioni separate e inventariare l'archivio storico, costituito dai documenti relativi ad affari esauriti da oltre:", ["30 anni", "50 anni", "70 anni", "40 anni"], "D", "Il limite di 40 anni vale per gli archivi degli enti pubblici (art. 30, c. 4); i 30 anni riguardano i versamenti degli uffici statali agli Archivi di Stato (art. 41)."], ["La dichiarazione sostitutiva dell'atto di notorietà è disciplinata dall'art.:", ["46 del D.P.R. 445/2000", "47 del D.P.R. 445/2000", "38 del D.P.R. 445/2000", "76 del D.P.R. 445/2000"], "B", "L'art. 46 riguarda le dichiarazioni sostitutive di certificazioni, l'art. 47 quelle di atto di notorietà, l'art. 76 le sanzioni penali per dichiarazioni mendaci."], ["Secondo il CAD, il \"duplicato informatico\" è:", ["La copia per immagine di un documento analogico", "Una copia informatica con diversa sequenza di valori binari", "Il documento ottenuto memorizzando, sullo stesso o su diversi dispositivi, la medesima sequenza di valori binari del documento originario", "La stampa cartacea di un documento informatico"], "C", "Il duplicato ha la stessa sequenza di bit dell'originale e ha il suo stesso valore giuridico; la copia informatica ha contenuto identico ma una sequenza binaria diversa."], ["Nel modello OAIS (ISO 14721), il pacchetto conservato all'interno del sistema di conservazione è denominato:", ["SIP", "DIP", "PDF/A", "AIP"], "D", "SIP = pacchetto di versamento, AIP = pacchetto di archiviazione, DIP = pacchetto di distribuzione."], ["Secondo il TUEL, la giunta comunale è composta:", ["Dal sindaco, che la presiede, e da un numero di assessori stabilito dallo statuto nei limiti di legge", "Da tutti i consiglieri comunali eletti", "Dal sindaco e dal segretario comunale", "Dai dirigenti dell'ente"], "A", "Art. 47 del D.Lgs. 267/2000."], ["Il codice di comportamento dei dipendenti pubblici (D.P.R. 62/2013) è stato adottato in attuazione:", ["Dell'art. 53 del D.Lgs. 165/2001", "Dell'art. 107 del TUEL", "Dell'art. 54 del D.Lgs. 165/2001", "Dell'art. 6 della L. 241/1990"], "C", "L'art. 54 del D.Lgs. 165/2001 prevede il codice di comportamento; l'art. 53 riguarda incompatibilità e cumulo di incarichi."], ["Se non è stato assegnato un responsabile del procedimento, ai sensi della L. 241/1990 è considerato responsabile:", ["Il sindaco", "Il funzionario preposto all'unità organizzativa competente", "Il segretario comunale", "Nessuno, e il procedimento è sospeso"], "B", "Art. 5, c. 2 della L. 241/1990."], ["Nell'accesso documentale (L. 241/1990), decorsi inutilmente 30 giorni dalla richiesta:", ["La richiesta si intende accolta", "Il procedimento si sospende automaticamente", "La richiesta si intende respinta", "Il termine si proroga di altri 60 giorni"], "C", "È il silenzio-rigetto previsto dall'art. 25, c. 4, contro cui si può ricorrere."], ["L'accesso civico generalizzato (art. 5, c. 2 del D.Lgs. 33/2013) può essere esercitato:", ["Da chiunque, senza obbligo di motivazione", "Solo da chi ha un interesse diretto, concreto e attuale", "Solo dai residenti nel Comune", "Solo presentando una richiesta motivata"], "A", "Il FOIA italiano non richiede legittimazione né motivazione, fermi restando i limiti dell'art. 5-bis."], ["Il trattamento dei dati personali a fini di archiviazione nel pubblico interesse, di ricerca scientifica o storica o a fini statistici è disciplinato in particolare dall'art.:", ["9 del GDPR", "17 del GDPR", "32 del GDPR", "89 del GDPR"], "D", "L'art. 89 prevede garanzie e deroghe per queste finalità; l'art. 9 riguarda le categorie particolari di dati, il 17 il diritto all'oblio, il 32 la sicurezza."], ["In un progetto di digitalizzazione, il file \"master\" è:", ["Il file a bassa risoluzione per la pubblicazione web", "Il file di alta qualità, non compresso o con compressione senza perdita, destinato alla conservazione e da cui si ricavano i derivati", "L'anteprima (thumbnail) dell'immagine", "Il file di testo prodotto dall'OCR"], "B", "Dal master si generano le copie derivate (per esempio JPEG) per consultazione e fruizione."], ["L'OCR è una tecnologia che:", ["Comprime le immagini per ridurne il peso", "Appone la firma digitale ai documenti", "Riconosce i caratteri in un'immagine e li converte in testo elaborabile e ricercabile", "Verifica l'integrità di un file tramite hash"], "C", "OCR sta per Optical Character Recognition, riconoscimento ottico dei caratteri."], ["Nel D.Lgs. 81/2008, la movimentazione manuale dei carichi è disciplinata dal:", ["Titolo VI", "Titolo VII", "Titolo IX", "Titolo II"], "A", "Titolo VI: movimentazione manuale dei carichi; Titolo VII: videoterminali; Titolo IX: sostanze pericolose; Titolo II: luoghi di lavoro."], ["Il formato PDF/A è:", ["Un PDF protetto da password", "Una versione standardizzata ISO del PDF pensata per la conservazione a lungo termine", "Un PDF sempre modificabile con qualsiasi editor", "Un formato audio compresso"], "B", "PDF/A (ISO 19005) è autocontenuto (per esempio include i font) ed è tra i formati idonei alla conservazione."], ["Nel lessico archivistico inglese, \"finding aid\" significa:", ["Contributo finanziario per la ricerca", "Servizio di ricerca a pagamento", "Strumento di corredo o di ricerca (inventario, elenco, guida)", "Procedura per il recupero di documenti smarriti"], "C", "Finding aid indica lo strumento di ricerca archivistico."]], [["Ciò che distingue un archivio da una raccolta o collezione è che l'archivio:", ["È sempre di proprietà pubblica", "Si forma spontaneamente come sedimentazione dell'attività di un soggetto, mentre la collezione nasce da una scelta volontaria", "Contiene solo documenti su supporto cartaceo", "È ordinato per materia secondo criteri scelti dall'archivista"], "B", "L'archivio nasce in modo naturale dall'attività del produttore; la collezione riunisce documenti secondo criteri soggettivi del collezionista."], ["Il \"soggetto produttore\" di un archivio è:", ["L'istituto che attualmente conserva la documentazione", "L'archivista che ne ha curato l'ordinamento", "L'ente, la persona o la famiglia che ha prodotto, accumulato e/o conservato i documenti nello svolgimento della propria attività", "Il fornitore del software di gestione documentale"], "C", "Il produttore va distinto dal soggetto conservatore, cioè l'istituto dove l'archivio si trova oggi."], ["L'archivio di deposito comprende:", ["I documenti relativi ad affari conclusi, non più necessari alla trattazione corrente ma ancora di possibile interesse amministrativo", "I soli documenti in attesa di protocollazione", "I documenti già destinati alla conservazione permanente e inventariati", "I documenti prodotti nell'anno in corso"], "A", "Nel deposito i documenti restano in attesa della selezione: una parte viene scartata, il resto confluisce nell'archivio storico."], ["Il \"fondo\" archivistico è:", ["Un singolo fascicolo di particolare importanza", "Un raggruppamento per materia creato dall'archivista", "Il locale in cui sono conservati i documenti", "Il complesso dei documenti prodotti o acquisiti da un soggetto produttore nell'esercizio delle sue funzioni"], "D", "Il fondo è il livello più alto della descrizione, legato a un unico produttore."], ["La \"serie archivistica\" è:", ["Un raggruppamento di unità archivistiche omogenee per forma, materia o funzione all'interno di un fondo", "L'insieme di tutti i fondi conservati in un istituto", "La sequenza dei numeri di protocollo di un anno", "L'elenco dei documenti scartati"], "A", "Esempi di serie sono le deliberazioni del consiglio, i registri di protocollo e i fascicoli del personale."], ["Quale condizione favorisce maggiormente la formazione di muffe sui documenti?", ["Umidità relativa bassa e buona aerazione", "Illuminazione con lampade LED", "Umidità relativa elevata e scarsa ventilazione", "Condizionamento in contenitori a pH neutro"], "C", "Umidità alta e aria stagnante sono i principali fattori di rischio biologico; per questo si monitorano costantemente i parametri ambientali."], ["ISAAR(CPF) è lo standard internazionale per:", ["La descrizione generale dei fondi", "I record d'autorità archivistici relativi a enti, persone e famiglie", "La conservazione digitale", "La classificazione dei documenti correnti"], "B", "CPF sta per Corporate bodies, Persons, Families; la seconda edizione è del 2004."], ["Lo standard ISDIAH riguarda:", ["La descrizione delle funzioni", "La codifica XML degli inventari", "I metadati della digitalizzazione", "La descrizione degli istituti che conservano archivi"], "D", "ISDIAH (2008): International Standard for Describing Institutions with Archival Holdings."], ["Quale dei seguenti NON è tra gli elementi di ISAD(G) considerati essenziali per lo scambio internazionale delle descrizioni?", ["Codice di riferimento", "Livello di descrizione", "Condizioni che regolano la riproduzione", "Consistenza e supporto dell'unità di descrizione"], "C", "Gli elementi essenziali sono: codice di riferimento, denominazione o titolo, soggetto produttore, data, consistenza e livello di descrizione."], ["La segnatura di protocollo (art. 55 del D.P.R. 445/2000) è:", ["L'apposizione o associazione all'originale del documento, in forma permanente e non modificabile, delle informazioni che lo riguardano", "La firma del dirigente sul documento", "L'assegnazione del documento all'ufficio competente", "L'inserimento del documento nel fascicolo"], "A", "La segnatura avviene contestualmente alla registrazione e contiene almeno numero, data e identificativo dell'amministrazione o AOO."], ["Il Piano di classificazione per gli archivi dei Comuni italiani del 2005 è articolato in:", ["15 categorie", "10 titoli", "20 titoli", "14 titoli"], "D", "Le 15 categorie sono quelle della precedente Circolare Astengo del 1897."], ["Il fascicolo è:", ["L'insieme di tutti i documenti protocollati in una giornata", "L'insieme ordinato dei documenti relativi a uno stesso affare, procedimento, attività o persona", "Il contenitore fisico in cartone", "L'elenco delle voci del titolario"], "B", "L'insieme dei documenti protocollati in un giorno è il registro giornaliero; il faldone è il contenitore fisico, che può contenere più fascicoli."], ["Il piano di conservazione previsto dall'art. 68 del D.P.R. 445/2000:", ["È il registro delle presenze in archivio", "Disciplina solo la conservazione dei documenti informatici", "È integrato con il sistema di classificazione e definisce i criteri di organizzazione dell'archivio, di selezione periodica e di conservazione permanente", "È approvato annualmente dal consiglio comunale"], "C", "Il piano di conservazione indica, voce per voce del titolario, i tempi di conservazione e quindi cosa si può proporre per lo scarto."], ["Ai sensi dell'art. 122 del D.Lgs. 42/2004, i documenti con dati idonei a rivelare lo stato di salute, la vita sessuale o rapporti riservati di tipo familiare diventano consultabili dopo:", ["40 anni", "70 anni", "50 anni", "100 anni"], "B", "Sono 70 anni; 40 anni per gli altri dati sensibili e giudiziari; 50 per i documenti riservati di politica estera o interna."], ["I documenti dichiarati di carattere riservato relativi alla politica estera o interna dello Stato diventano consultabili dopo:", ["30 anni", "40 anni", "70 anni", "50 anni"], "D", "Art. 122, c. 1, lett. a) del D.Lgs. 42/2004."], ["Ai sensi dell'art. 20 del D.Lgs. 42/2004, gli archivi pubblici:", ["Non possono essere smembrati", "Possono essere smembrati previa delibera di giunta", "Possono essere alienati liberamente", "Possono essere riorganizzati per materia separando i fondi"], "A", "Il divieto di smembramento tutela l'unità e il vincolo archivistico; vale anche per gli archivi privati dichiarati."], ["La firma digitale si basa su:", ["La scansione della firma autografa", "Un sistema di chiavi crittografiche asimmetriche, una pubblica e una privata, correlate tra loro", "Una password inviata via SMS", "L'invio del documento tramite PEC"], "B", "Con la chiave privata il titolare firma; con la chiave pubblica chiunque può verificare provenienza e integrità (art. 1 del CAD)."], ["Secondo le Linee guida AgID, il registro giornaliero di protocollo deve essere trasmesso al sistema di conservazione:", ["Entro la fine dell'anno solare", "Entro 30 giorni", "Entro la giornata lavorativa successiva", "Solo su richiesta del responsabile della conservazione"], "C", "Il termine serve a garantirne l'immodificabilità del contenuto."], ["Le Linee guida AgID sulla formazione, gestione e conservazione dei documenti informatici sono adottate ai sensi:", ["Dell'art. 71 del CAD", "Dell'art. 21 del D.Lgs. 42/2004", "Dell'art. 5 del D.Lgs. 33/2013", "Dell'art. 89 del GDPR"], "A", "L'art. 71 del CAD attribuisce ad AgID l'adozione delle Linee guida attuative; quelle sul documento informatico sono in vigore dal 1° gennaio 2022."], ["Secondo il TUEL, gli atti di gestione amministrativa, finanziaria e tecnica spettano:", ["Al sindaco", "Alla giunta", "Al consiglio comunale", "Ai dirigenti"], "D", "Art. 107 del TUEL: principio di separazione tra indirizzo politico e gestione."], ["L'art. 53 del D.Lgs. 165/2001 disciplina:", ["Il codice di comportamento", "Le incompatibilità, il cumulo di impieghi e gli incarichi dei dipendenti pubblici", "Il procedimento disciplinare", "La mobilità tra amministrazioni"], "B", "Ne parla anche il bando: prima dell'assunzione si dichiara di non trovarsi in situazioni di incompatibilità ex art. 53."], ["Ai sensi dell'art. 21-septies della L. 241/1990, è nullo il provvedimento:", ["Adottato in violazione di legge", "Viziato da eccesso di potere", "Viziato da incompetenza relativa", "Che manca degli elementi essenziali o è viziato da difetto assoluto di attribuzione"], "D", "Violazione di legge, eccesso di potere e incompetenza rendono il provvedimento annullabile (art. 21-octies), non nullo."], ["Per esercitare l'accesso documentale ai sensi della L. 241/1990 occorre:", ["Un interesse diretto, concreto e attuale, corrispondente a una situazione giuridicamente tutelata e collegata al documento", "Nessuna motivazione", "La residenza nel Comune", "Essere dipendenti dell'ente"], "A", "L'assenza di motivazione caratterizza invece l'accesso civico generalizzato."], ["Per un Comune, la designazione del Responsabile della protezione dei dati (RPD/DPO):", ["È facoltativa", "È obbligatoria solo sopra i 15.000 abitanti", "È obbligatoria", "È obbligatoria solo se tratta dati sanitari"], "C", "Art. 37 del GDPR: è obbligatoria per tutte le autorità e gli organismi pubblici (eccettuate le autorità giurisdizionali)."], ["Gli obblighi di pubblicazione previsti dal D.Lgs. 33/2013 si assolvono:", ["Nella sezione \"Amministrazione trasparente\" del sito istituzionale", "Con l'affissione all'albo cartaceo", "Nella Gazzetta Ufficiale", "Nel Bollettino Ufficiale Regionale"], "A", "La sezione \"Amministrazione trasparente\" ha una struttura standardizzata; è lì che si trovano anche le tracce delle prove dei concorsi."], ["Lo standard MAG, usato nei progetti di digitalizzazione, riguarda:", ["La compressione delle immagini", "I metadati amministrativi e gestionali delle risorse digitali", "La sicurezza delle reti informatiche", "La classificazione dei documenti correnti"], "B", "MAG (Metadati Amministrativi Gestionali) è uno schema italiano sviluppato in ambito ICCU."], ["Quale attività NON rientra nel controllo di qualità di un lotto di digitalizzazione?", ["Verificare che tutte le pagine siano state acquisite", "Controllare la leggibilità e la corretta sequenza delle immagini", "Verificare la corretta associazione tra immagini e metadati", "Valutare l'interesse storico dei documenti ai fini dello scarto"], "D", "La selezione e lo scarto sono operazioni archivistiche distinte; il controllo qualità verifica completezza, leggibilità, sequenza e metadati."], ["Ai sensi del D.Lgs. 81/2008, sono obblighi del datore di lavoro NON delegabili:", ["La fornitura dei DPI e la formazione dei lavoratori", "La valutazione dei rischi con elaborazione del DVR e la designazione del RSPP", "La nomina del medico competente e degli addetti antincendio", "L'elezione del RLS"], "B", "Art. 17. Il RLS è eletto o designato dai lavoratori, non dal datore di lavoro."], ["L'impronta (hash) di un documento informatico è:", ["Una sequenza di bit di lunghezza predefinita generata da una funzione di hash, usata per verificare l'integrità del documento", "La firma autografa scansionata", "Il nome del file", "La data di creazione del file"], "A", "Se il documento cambia anche di un solo bit, l'impronta cambia; per questo è tra gli elementi della registrazione di protocollo."], ["L'espressione inglese \"records retention schedule\" corrisponde a:", ["Orario di apertura della sala studio", "Registro delle presenze", "Piano di conservazione (tempi di conservazione e scarto)", "Calendario delle digitalizzazioni"], "C", "Stabilisce per quanto tempo conservare ciascuna tipologia documentaria e quando proporne lo scarto (disposal)."]], [["Il \"manuale olandese\" del 1898, testo fondativo dell'archivistica moderna, fu scritto da:", ["Muller, Feith e Fruin", "Jenkinson, Schellenberg e Casanova", "Bonaini, Cencetti e Lodolini", "De Wailly, Brenneke e Valenti"], "A", "Samuel Muller, Johan Feith e Robert Fruin codificarono le regole di ordinamento e descrizione basate sul rispetto dell'ordine originario."], ["L'opera \"Archivistica\" (1928), punto di riferimento per la disciplina in Italia, è di:", ["Giorgio Cencetti", "Elio Lodolini", "Eugenio Casanova", "Filippo Valenti"], "C", "Eugenio Casanova pubblicò \"Archivistica\" nel 1928; Cencetti è noto soprattutto per la teoria del vincolo archivistico."], ["Si definisce \"archivio ibrido\":", ["Un archivio formato da fondi di produttori diversi mescolati tra loro", "Un archivio composto sia da documenti analogici sia da documenti digitali", "Un archivio in parte pubblico e in parte privato", "Un archivio conservato in due sedi diverse"], "B", "È la condizione tipica delle PA nella transizione al digitale: il fascicolo può contenere documenti cartacei e informatici, che vanno gestiti in modo unitario."], ["Il riordinamento di un archivio consiste:", ["Nel ricostituire l'ordine originario dei documenti o, se mancante, nel dare un ordine che rispecchi l'attività del produttore", "Nel riorganizzare i documenti per materia secondo le esigenze degli utenti", "Nel disporre i documenti in ordine alfabetico", "Nel selezionare i documenti da scartare"], "A", "L'ordinamento per materia è contrario al metodo storico e al principio di provenienza."], ["L'elenco di consistenza è:", ["Uno strumento analitico che descrive ogni singolo documento", "Il registro dei prestiti in sala studio", "Il piano di classificazione dell'ente", "Uno strumento sommario che indica le unità presenti e la loro quantità, senza descrizione analitica"], "D", "È spesso il primo strumento prodotto su un fondo non ordinato, prima di arrivare all'inventario."], ["Il regesto è:", ["Il riassunto del contenuto giuridico essenziale di un documento (data, autore, destinatario, azione)", "Un registro di protocollo antico", "La trascrizione integrale di un documento", "Il timbro di segnatura del documento"], "A", "Si usa soprattutto per la documentazione medievale e moderna; la trascrizione integrale è un'altra operazione."], ["EAD (Encoded Archival Description) è:", ["Uno standard per la descrizione delle funzioni", "Il formato XML standard per la codifica degli strumenti di ricerca archivistici", "Un software di protocollo informatico", "Un formato per le immagini digitali"], "B", "Per i record d'autorità esiste lo schema XML corrispondente EAC-CPF."], ["Lo standard ISDF riguarda la descrizione:", ["Dei fondi archivistici", "Degli istituti di conservazione", "Delle funzioni", "Dei documenti digitali"], "C", "ISDF (2007): International Standard for Describing Functions."], ["RiC (Records in Contexts) è:", ["Il software nazionale per il protocollo informatico", "Un formato di compressione per archivi digitali", "Il regolamento europeo sulla conservazione digitale", "Il modello concettuale dell'ICA che integra gli standard esistenti in un modello basato su entità e relazioni"], "D", "RiC riunisce ISAD(G), ISAAR(CPF), ISDF e ISDIAH; comprende un modello concettuale (RiC-CM) e un'ontologia (RiC-O)."], ["Il titolario per i Comuni introdotto dalla Circolare Astengo del 1897 era articolato in:", ["14 titoli", "15 categorie", "10 classi", "20 sezioni"], "B", "Le 15 categorie della Circolare Astengo sono state superate dal Piano di classificazione del 2005, articolato in 14 titoli."], ["L'AOO (Area Organizzativa Omogenea) è:", ["Un insieme di uffici individuato dall'amministrazione per gestire i documenti in modo unitario e coordinato, con un unico registro di protocollo", "Il locale adibito ad archivio di deposito", "L'ufficio relazioni con il pubblico", "L'ufficio del responsabile della conservazione"], "A", "Previste dall'art. 50, c. 4 del D.P.R. 445/2000; ogni AOO ha il proprio protocollo unico."], ["Ai sensi dell'art. 57 del D.P.R. 445/2000, il numero di protocollo:", ["È composto da almeno cinque cifre e si rinnova ogni mese", "È assegnato dal responsabile del procedimento", "È progressivo, composto da almeno sette cifre numeriche e si rinnova ogni anno solare", "Può essere riutilizzato dopo un annullamento"], "C", "La numerazione ricomincia da 1 all'inizio di ogni anno solare."], ["Il repertorio dei fascicoli è:", ["L'elenco dei documenti ricevuti via PEC", "Il registro in cui sono annotati i fascicoli con numero, oggetto, classificazione e date di apertura e chiusura", "L'elenco delle voci del titolario", "Il registro dei documenti scartati"], "B", "È lo strumento che consente di sapere quali fascicoli sono stati aperti per ogni voce del titolario."], ["Ai sensi dell'art. 41 del D.Lgs. 42/2004, gli organi giudiziari e amministrativi dello Stato versano agli Archivi di Stato i documenti relativi ad affari esauriti da oltre:", ["20 anni", "40 anni", "50 anni", "30 anni"], "D", "Il termine è 30 anni; non confonderlo con i 40 anni dell'archivio storico degli enti pubblici (art. 30)."], ["Gli archivi appartenenti a privati sono beni culturali:", ["Sempre, per legge", "Quando rivestono interesse storico particolarmente importante e sia intervenuta la dichiarazione di cui all'art. 13", "Solo se donati a un ente pubblico", "Solo se hanno più di 100 anni"], "B", "Art. 10, c. 3, lett. b) del D.Lgs. 42/2004; la dichiarazione è adottata dal Ministero tramite la Soprintendenza archivistica."], ["Secondo l'art. 101 del D.Lgs. 42/2004, l'\"archivio\" come istituto della cultura è:", ["Il locale dove si conservano i documenti correnti", "L'ufficio che gestisce il protocollo", "Una struttura permanente che raccoglie, inventaria e conserva documenti originali di interesse storico e ne assicura la consultazione per studio e ricerca", "Qualsiasi raccolta di documenti digitali"], "C", "L'art. 101 elenca gli istituti e luoghi della cultura: musei, biblioteche, archivi, aree e parchi archeologici, complessi monumentali."], ["Nel CAD, il \"domicilio digitale\" è:", ["L'indirizzo di residenza registrato in anagrafe", "L'account SPID del cittadino", "Il sito web istituzionale dell'ente", "Un indirizzo elettronico eletto presso un servizio di PEC o di recapito certificato qualificato"], "D", "Art. 1, c. 1, lett. n-ter) e art. 3-bis del CAD."], ["La \"copia per immagine su supporto informatico di documento analogico\" è:", ["Il documento informatico avente contenuto e forma identici a quelli del documento analogico da cui è tratto", "Il documento informatico con lo stesso contenuto ma forma diversa", "La stampa di un documento informatico", "Il duplicato di un file"], "A", "È il risultato tipico della scansione (art. 1 del CAD); la copia informatica di documento analogico ha lo stesso contenuto ma forma diversa."], ["Nel processo di conservazione digitale, il pacchetto che il produttore invia al sistema di conservazione è:", ["Il pacchetto di archiviazione (AIP)", "Il pacchetto di distribuzione (DIP)", "Il pacchetto di versamento (SIP)", "Il manuale di gestione"], "C", "Il SIP viene trasformato in AIP per la conservazione; il DIP è restituito all'utente che richiede l'esibizione."], ["Secondo il TUEL, il consiglio comunale è:", ["L'organo di indirizzo e di controllo politico-amministrativo", "L'organo esecutivo del Comune", "L'organo di gestione amministrativa", "L'organo di revisione contabile"], "A", "Art. 42 del TUEL. L'organo esecutivo collegiale è la giunta; la gestione spetta ai dirigenti."], ["Il segretario comunale:", ["È eletto dal consiglio comunale tra i suoi membri", "Presiede la giunta in assenza del sindaco", "Svolge compiti di collaborazione e assistenza giuridico-amministrativa nei confronti degli organi dell'ente", "È il responsabile unico di tutti i procedimenti"], "C", "Art. 97 del TUEL: il segretario assicura la conformità dell'azione amministrativa alle leggi, allo statuto e ai regolamenti."], ["Se una legge o un regolamento non prevedono un termine diverso, il procedimento amministrativo deve concludersi entro:", ["60 giorni", "30 giorni", "90 giorni", "180 giorni"], "B", "Art. 2, c. 2 della L. 241/1990."], ["L'accesso civico \"semplice\" (art. 5, c. 1 del D.Lgs. 33/2013) riguarda:", ["Documenti, dati e informazioni soggetti a pubblicazione obbligatoria che l'amministrazione ha omesso di pubblicare", "Qualsiasi documento detenuto dall'amministrazione", "Solo i documenti di cui il richiedente è destinatario", "Solo i documenti conservati nell'archivio storico"], "A", "L'accesso a dati e documenti ulteriori rispetto a quelli da pubblicare è l'accesso civico generalizzato (art. 5, c. 2)."], ["Le Regole deontologiche per il trattamento a fini di archiviazione nel pubblico interesse o per scopi di ricerca storica sono state adottate:", ["Dall'AgID", "Dal Ministero della cultura con decreto", "Dall'Associazione Nazionale Archivistica Italiana", "Dal Garante per la protezione dei dati personali"], "D", "Il Garante le ha adottate a fine 2018, dopo l'adeguamento del Codice privacy al GDPR; sostituiscono il precedente codice deontologico."], ["Quale dei seguenti NON rientra nelle \"categorie particolari di dati personali\" dell'art. 9 del GDPR?", ["I dati relativi alla salute", "Le convinzioni religiose", "Il codice fiscale", "L'appartenenza sindacale"], "C", "Il codice fiscale è un dato personale comune. Le categorie particolari includono tra l'altro origine etnica, opinioni politiche, dati genetici e biometrici, salute, vita e orientamento sessuale."], ["Quale formato è tradizionalmente usato per le immagini master nei progetti di digitalizzazione?", ["GIF", "TIFF non compresso", "JPEG a bassa qualità", "DOCX"], "B", "Il TIFF non compresso (o con compressione senza perdita) è lo standard di fatto per i master; il JPEG si usa per le copie di consultazione."], ["Il Dublin Core Metadata Element Set, nella sua versione base, è composto da:", ["15 elementi", "26 elementi", "10 elementi", "50 elementi"], "A", "Sono 15 elementi, tra cui title, creator, subject, date, format e identifier; da non confondere con i 26 elementi di ISAD(G)."], ["Ai sensi del D.Lgs. 81/2008, è considerato lavoratore addetto ai videoterminali chi li utilizza in modo sistematico o abituale per:", ["10 ore settimanali", "4 ore al giorno", "36 ore settimanali", "20 ore settimanali, dedotte le interruzioni"], "D", "Art. 173 del D.Lgs. 81/2008 (Titolo VII)."], ["Rispetto a una normale e-mail, la PEC:", ["Permette di inviare allegati di dimensioni illimitate", "Rilascia ricevute di accettazione e di consegna con valore legale", "Cifra automaticamente il contenuto rendendolo anonimo", "Non può essere usata dalle pubbliche amministrazioni"], "B", "Le ricevute sono opponibili ai terzi e la trasmissione via PEC equivale, salvo diversa previsione, alla notificazione per mezzo della posta."], ["Nel lessico archivistico inglese, \"appraisal\" indica:", ["Il restauro dei documenti danneggiati", "La digitalizzazione dei fondi", "La valutazione dei documenti per decidere tra conservazione permanente e scarto", "La catalogazione bibliografica"], "C", "Appraisal corrisponde alla selezione o valutazione archivistica; lo scarto vero e proprio è disposal o destruction."]]];
+
+/* Countdown */
+(function(){
+  const el = document.getElementById('countdown');
+  const target = new Date('2026-09-29T12:00:00+02:00').getTime();
+  function tick(){
+    const d = target - Date.now();
+    if (d <= 0){ el.textContent = 'Prova scritta digitale da remoto, già svolta'; return; }
+    const days = Math.floor(d / 86400000);
+    const hours = Math.floor((d % 86400000) / 3600000);
+    const mins = Math.floor((d % 3600000) / 60000);
+    let s = 'Mancano ';
+    if (days > 0) s += days + (days === 1 ? ' giorno e ' : ' giorni e ') + hours + (hours === 1 ? ' ora' : ' ore');
+    else s += hours + (hours === 1 ? ' ora e ' : ' ore e ') + mins + ' minuti';
+    el.textContent = s;
+  }
+  tick(); setInterval(tick, 30000);
+})();
+
+/* Checklist con memoria locale */
+(function(){
+  const KEY = 'archivista-checklist';
+  let state = {};
+  try { state = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch(e){ state = {}; }
+  const boxes = document.querySelectorAll('#checklist input');
+  const out = document.getElementById('checkProgress');
+  function update(){
+    const done = [...boxes].filter(b => b.checked).length;
+    out.textContent = done === boxes.length ? 'Postazione pronta: tutte le voci sono spuntate.' : done + ' di ' + boxes.length + ' voci completate.';
+  }
+  boxes.forEach(b => {
+    b.checked = !!state[b.dataset.k];
+    b.addEventListener('change', () => {
+      state[b.dataset.k] = b.checked;
+      try { localStorage.setItem(KEY, JSON.stringify(state)); } catch(e){}
+      update();
+    });
+  });
+  update();
+})();
+
+/* Navigazione attiva */
+(function(){
+  const links = [...document.querySelectorAll('nav.toc a')];
+  const secs = links.map(a => document.querySelector(a.getAttribute('href')));
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      if (en.isIntersecting){
+        links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + en.target.id));
+      }
+    });
+  }, {rootMargin: '-30% 0px -60% 0px'});
+  secs.forEach(s => s && io.observe(s));
+})();
+
+/* Simulazioni */
+(function(){
+  const LETTERS = ['A','B','C','D'];
+  const DURATION = 40 * 60;
+  let current = 0, running = false, remaining = DURATION, timerId = null;
+  const segBtns = document.querySelectorAll('.seg button');
+  const startPanel = document.getElementById('startPanel');
+  const startText = document.getElementById('startText');
+  const startBtn = document.getElementById('startBtn');
+  const form = document.getElementById('quizForm');
+  const bar = document.getElementById('testbar');
+  const timerEl = document.getElementById('timer');
+  const countEl = document.getElementById('count');
+  const submitBtn = document.getElementById('submitBtn');
+  const result = document.getElementById('result');
+
+  function esc(s){ return s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+  function fmt(sec){ const m = Math.floor(sec/60), s = sec%60; return String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0'); }
+
+  function resetView(){
+    clearInterval(timerId); running = false; remaining = DURATION;
+    form.hidden = true; form.innerHTML = ''; form.classList.remove('done');
+    bar.hidden = true; result.hidden = true; result.innerHTML = '';
+    startPanel.hidden = false; startBtn.textContent = 'Avvia la prova';
+    startText.textContent = 'La Simulazione ' + (current+1) + ' è pronta. Il timer parte quando avvii la prova e alla scadenza la prova viene consegnata automaticamente.';
+    timerEl.textContent = fmt(DURATION); timerEl.classList.remove('low');
+    segBtns.forEach(b => b.disabled = false);
+  }
+
+  function render(){
+    const qs = SIMS[current];
+    form.innerHTML = qs.map((q, i) => {
+      const [prompt, opts] = q;
+      const optsHtml = opts.map((o, j) =>
+        '<label class="opt" data-l="' + LETTERS[j] + '"><input type="radio" name="q' + i + '" value="' + LETTERS[j] + '">' +
+        '<span class="l">' + LETTERS[j] + ')</span><span>' + esc(o) + '</span></label>').join('');
+      return '<fieldset class="q" id="q' + i + '"><legend><span class="n">' + (i+1) + '.</span><span>' + esc(prompt) + '</span></legend>' +
+        optsHtml + '<div class="expl" hidden></div></fieldset>';
+    }).join('');
+    updateCount();
+  }
+
+  function updateCount(){
+    const n = SIMS[current].filter((_, i) => form.querySelector('input[name="q' + i + '"]:checked')).length;
+    countEl.textContent = n + ' di 30 risposte';
+  }
+
+  function start(){
+    render();
+    form.hidden = false; bar.hidden = false; startPanel.hidden = true; running = true;
+    segBtns.forEach(b => b.disabled = true);
+    const t0 = Date.now();
+    timerId = setInterval(() => {
+      remaining = Math.max(0, DURATION - Math.floor((Date.now() - t0) / 1000));
+      timerEl.textContent = fmt(remaining);
+      timerEl.classList.toggle('low', remaining <= 300);
+      if (remaining === 0) finish(true);
+    }, 500);
+    form.querySelector('fieldset').scrollIntoView({block: 'start'});
+  }
+
+  function finish(timeUp){
+    if (!running) return;
+    const unanswered = SIMS[current].filter((_, i) => !form.querySelector('input[name="q' + i + '"]:checked')).length;
+    if (!timeUp && unanswered > 0 && !confirm('Ci sono ' + unanswered + ' domande senza risposta. Le risposte omesse valgono 0: vuoi consegnare comunque?')) return;
+    clearInterval(timerId); running = false;
+    const used = DURATION - remaining;
+    let score = 0;
+    SIMS[current].forEach((q, i) => {
+      const [, , ans, expl] = q;
+      const fs = document.getElementById('q' + i);
+      const sel = form.querySelector('input[name="q' + i + '"]:checked');
+      const chosen = sel ? sel.value : null;
+      if (chosen === ans) score++;
+      fs.querySelectorAll('input').forEach(inp => inp.disabled = true);
+      fs.querySelectorAll('.opt').forEach(lab => {
+        if (lab.dataset.l === ans) lab.classList.add('correct');
+        else if (lab.dataset.l === chosen) lab.classList.add('wrong');
+      });
+      const ex = fs.querySelector('.expl');
+      const verdict = chosen === ans ? '<b class="verdict-ok">Corretta.</b> ' :
+        (chosen ? '<b class="verdict-ko">Errata: la risposta giusta è la ' + ans + '.</b> ' : '<b class="verdict-ko">Omessa: la risposta giusta è la ' + ans + '.</b> ');
+      ex.innerHTML = verdict + esc(expl);
+      ex.hidden = false;
+    });
+    form.classList.add('done');
+    bar.hidden = true;
+    const pass = score >= 21;
+    result.className = 'result' + (pass ? '' : ' fail');
+    result.innerHTML = '<div class="score">' + score + '/30</div>' +
+      '<p>' + (pass ? 'Prova superata: hai raggiunto la soglia di 21/30.' : 'Prova non superata: servono almeno 21 risposte corrette.') +
+      ' Tempo impiegato: ' + fmt(used) + (timeUp ? ' (tempo scaduto, consegna automatica).' : '.') + '</p>' +
+      '<p>Scorri le domande per vedere le correzioni e le spiegazioni.</p>' +
+      '<p style="margin-top:12px"><button class="btn ghost" type="button" id="retryBtn">Ricomincia questa simulazione</button></p>';
+    result.hidden = false;
+    document.getElementById('retryBtn').addEventListener('click', () => { resetView(); startPanel.scrollIntoView({block:'center'}); });
+    segBtns.forEach(b => b.disabled = false);
+    result.scrollIntoView({block: 'center'});
+  }
+
+  segBtns.forEach(b => b.addEventListener('click', () => {
+    if (running) return;
+    current = Number(b.dataset.sim);
+    segBtns.forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+    resetView();
+  }));
+  form.addEventListener('change', updateCount);
+  startBtn.addEventListener('click', start);
+  submitBtn.addEventListener('click', () => finish(false));
+  window.addEventListener('beforeunload', e => { if (running){ e.preventDefault(); e.returnValue = ''; } });
+})();
+</script>
+</body>
+</html>
